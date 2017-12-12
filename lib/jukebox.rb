@@ -1,4 +1,5 @@
-#! 
+#!/usr/bin/env ruby
+
 songs = [
   "Phoenix - 1901",
   "Tokyo Police Club - Wait Up",
@@ -20,7 +21,7 @@ def help()
   - play : lets you choose a song to play
   - exit : exits this program" 
 end 
-help()
+# help()
 
 # METHOD 2 ✔
 def list(songs)   
@@ -34,18 +35,19 @@ def list(songs)
 8. Harry Chapin - Cats in the Cradle
 9. Amos Lee - Keep It Loose, Keep It Tight"
 end
-list(songs)
+# list(songs)
 
 # METHOD 3 
 def play(songs) 
-puts "Please enter a song name and number: (#. Artist - Song Name"
-song_selection = gets.chomp 
-  if song_selection == 
-    puts "Playing #{songs[ ]}"
+  puts "Please enter a song name and number: (#. Artist - Song Name)"
+  song_selection = gets.chomp 
+  if song_selection == songs
+    puts "Playing #{songs}"
   else
     puts "Invalid input, please try again!"
   end
 end
+# play(songs)
 
 # METHOD 4
 def exit_jukebox() 
@@ -53,8 +55,21 @@ def exit_jukebox()
 end
 
 # # METHOD 5
-# def run()
-# end 
+def run()
+  help()
+  puts "Please enter a command:"
+  user_command = gets.strip  #.strip removes whitespace before and after user input, which .chomp removes whitespace after user input 
+  if user_command ==  "list" 
+    list(songs) 
+  elsif user_command == "play"
+    play(songs)
+  elsif user_command == "exit"
+    exit_jukebox()
+  else
+    puts "Invalid input, please try again!"
+    run()
+  end
+end 
 
 # def say_hello(name)
 #   "Hi #{name}!"
@@ -64,3 +79,4 @@ end
 # users_name = gets.chomp
 
 # puts say_hello(users_name)
+

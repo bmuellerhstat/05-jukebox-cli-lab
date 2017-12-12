@@ -47,10 +47,10 @@ song_selection = gets.chomp
   end
 end
 
-# # METHOD 4
-# def exit_jukebox() 
-#   puts "Goodbye!"
-# end
+# METHOD 4
+def exit_jukebox() 
+  puts "Goodbye!"
+end
 
 # # METHOD 5
 # def run()

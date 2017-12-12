@@ -11,8 +11,16 @@ songs = [
   "Harry Chapin - Cats in the Cradle",
   "Amos Lee - Keep It Loose, Keep It Tight"
 ]
+# HINT: Use the Array#each_with_index method to access the index number of a given element as you step through the iteration. Remember that arrays are indexed starting at 0. So, adding 1 to the index number at a given step of the iteration will result in the correct song number for the purposes of outputting your list of songs.
 
-# METHOD 1 ✔
+# METHOD 1             #Where should this method be put? 
+def each_with_index()  #There is probably more to this, but I am not sure what. 
+  songs.each do |song|
+    song.index() + 1
+  end
+end
+
+# METHOD 2 ✔
 def help() 
   puts "
   I accept the following commands:
@@ -23,7 +31,7 @@ def help()
 end 
 # help()
 
-# METHOD 2 ✔
+# METHOD 3 ✔
 def list(songs)   
   puts "1. Phoenix - 1901
 2. Tokyo Police Club - Wait Up
@@ -35,11 +43,11 @@ def list(songs)
 8. Harry Chapin - Cats in the Cradle
 9. Amos Lee - Keep It Loose, Keep It Tight"
 end
-list(songs)
+# list(songs)
 
-# METHOD 3 
+# METHOD 4 
 def play(songs) 
-  puts "Please enter a song name and number: (#. Artist - Song Name)"
+  puts "Please enter a song name or number:"
   song_selection = gets.chomp 
   if song_selection == songs
     puts "Playing #{songs}"
@@ -49,12 +57,12 @@ def play(songs)
 end
 # play(songs)
 
-# METHOD 4
+# METHOD 5
 def exit_jukebox() 
   puts "Goodbye!"
 end
 
-# # METHOD 5
+# # METHOD 6
 def run()
   help()
   puts "Please enter a command:"

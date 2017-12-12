@@ -59,6 +59,8 @@ def run()
   help()
   puts "Please enter a command:"
   user_command = gets.strip  #.strip removes whitespace before and after user input, which .chomp removes whitespace after user input 
+  
+  #Assuming that the user would not type "help" 
   if user_command ==  "list" 
     list(songs) 
   elsif user_command == "play"
@@ -67,9 +69,10 @@ def run()
     exit_jukebox()
   else
     puts "Invalid input, please try again!"
-    run()
+    # run()
   end
 end 
+
 
 # def say_hello(name)
 #   "Hi #{name}!"

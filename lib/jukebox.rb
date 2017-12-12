@@ -35,7 +35,7 @@ def list(songs)
 8. Harry Chapin - Cats in the Cradle
 9. Amos Lee - Keep It Loose, Keep It Tight"
 end
-# list(songs)
+list(songs)
 
 # METHOD 3 
 def play(songs) 
@@ -72,7 +72,7 @@ def run()
     # run()
   end
 end 
-
+run()
 
 # def say_hello(name)
 #   "Hi #{name}!"

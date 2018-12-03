@@ -18,7 +18,7 @@ def help
 end
 
 def list(songs)
-  for i in 0..songs.length
+  for i in 0...songs.length
     puts "#{i+1}. #{songs[i]}"
   end
 end
@@ -27,11 +27,32 @@ def play(songs)
   song = gets.chomp
   for i in 0..songs.length
     if song ==songs[i]  
-      puts "Playing #{song}"
+      puts song ="Playing #{songs[i]}"
+    elsif song.to_i == i+1
+      puts song ="Playing #{songs[i]}"
     end
+  end
+  if !song.include? "Playing"
+    puts "Invalid input, please try again"
   end
 end
 def exit_jukebox
   puts "Goodbye"
 end
-play(songs)
+def run(songs)
+  help
+  puts "Please enter a command:"
+  command = ""
+  while command != "exit"
+  command = gets.chomp
+    if command =="list"
+      list(songs)
+    elsif command == "play"
+      play(songs)
+    elsif command == "help"
+      help
+    end
+  end
+   exit_jukebox  
+end
+run(songs)

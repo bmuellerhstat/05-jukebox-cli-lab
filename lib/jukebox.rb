@@ -16,7 +16,6 @@ def help
 - play : lets you choose a song to play
 - exit : exits this program"
 end
-
 def list(songs)
   for i in 0...songs.length
     puts "#{i+1}. #{songs[i]}"

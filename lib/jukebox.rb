@@ -53,7 +53,7 @@ def run(songs)
     elsif user_command == "play"
       self.play
     end 
-    while user_command == "exit" do
+    while user_command == "exit"
       self.exit_jukebox
     end
   end
